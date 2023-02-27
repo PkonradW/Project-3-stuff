@@ -1,0 +1,19 @@
+Konrad Weakley
+COP 3404 Fall '22
+Project 3
+
+I. Purpose:
+		Pass 1 assembler. Symbols are read in and stored in a table. Addresses are stored for each statement.
+II. Source File
+	project3.c
+	SICOPS.txt
+	Makefile
+III. Input File
+	Testfile.txt (can be anything specified as argument)
+IV. Output File
+	p3
+    results.txt
+V. Instructions
+	Once inside project directory, enter the following lines into your terminal:
+		make
+		./p3 <input file>

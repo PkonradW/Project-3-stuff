@@ -1,0 +1,32 @@
+ 100   ADDRES    START    100                               
+. tests pc forward addressing
+. tests base addressing
+. tests pc backward addressing
+
+ 100   NOW      +LDB     #BEGIN              load base register 
+ 104   XXX       BASE     BEGIN              tell assembler  
+ 104   YYY       LDA      BE                 A <- (m..m+2)    
+ 107   EN        RESW     4                  
+ 113   BE        WORD     2                              
+ 116   BEGIN     RESW     1
+ 119   JUNK      RESW     2024                              
+18D1   THERE     RESW     1       
+18D4   POP       BYTE     C'FF'            should be 2 bytes       
+18D4   PUPPY     BYTE     C'FRED'    
+18D4   ZZZ       LDA      JUNK                               
+18D7   MMM       STA      THERE                              
+18DA             END      NOW                              
+INDEX LABEL    ADDRESS
+ 20   XXX       104
+ 31   BE        113
+ 56   EN        107
+ 70   PUPPY     18d4
+ 86   ADDRES    100
+ 87   MMM       119
+ 93   YYY       104
+106   BEGIN     116
+126   POP       18d4
+157   EN        100
+167   ZZZ       18d4
+169   THERE     18d1
+228   MMM       18d7
